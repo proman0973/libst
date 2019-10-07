@@ -10,6 +10,8 @@ namespace st {
         using return_type = std::optional<internal_type>;
     };
 
+    constexpr static auto no_state = std::nullopt;
+
     template<typename State>
     using ret = typename State::return_type;
 }

@@ -4,4 +4,6 @@ project(libst)
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(libst INTERFACE)
-add_executable(connection_state examples/connection_state.cpp)
+target_include_directories(libst INTERFACE .)
+
+add_subdirectory(examples)

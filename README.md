@@ -22,14 +22,14 @@ int main(int argc, char** argv) {
             .add_matcher([](SomeState& state) -> st::ret<State> {
                 if (state.data < 10) {
                     state.data++;
-                    return std::null_opt;
+                    return st::no_state;
                 } else {
                     return OtherState();
                 }
             })
             .add_matcher([](OtherState& state) -> st::ret<State> {
                 std::cout << "Calculation finished" << std::endl;
-                return std::null_opt;
+                return st::no_state;
             })
             .build();
     
